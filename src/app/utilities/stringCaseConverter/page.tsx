@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PageHeadding from '@/components/pageHeadding';
 import  formatStringOutput  from '@/utils/stringUtils';
 import TabList from '@/components/tabPanel';
@@ -44,7 +44,7 @@ const StringCaseConverter = () => {
     }
 
     return (
-        <main className='flex min-h-screen flex-col items-center p-20'>
+        <main className='flex flex-col items-center p-20'>
             <PageHeadding title="String Case Converter" />
             <section className="container flex flex-col place-items-center">
                 <div className="card rounded-box flex w-2/3  flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">

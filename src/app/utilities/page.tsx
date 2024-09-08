@@ -63,7 +63,7 @@ function DisplayCards() {
 
 const Utilizes = () => {
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
+    <main className='flex  flex-col items-center px-24 pt-24'>
       <div className='items-center'>
         <h1 className='text-5xl font-bold text-center p-4'>devUtils</h1>
         <p className='text-2xl '>A collection of utilities for developers</p>

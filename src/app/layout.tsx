@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/context/themeContext'
 import ClientThemeWrapper from '@/context/clientThemeWrapper'
 import NavBar from '@/components/navBar'
+import Footer from '@/components/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,14 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <body className={inter.className}>
         <ThemeProvider>
           <ClientThemeWrapper>
+          <main className='flex min-h-screen flex-col'>
             <NavBar /> 
-            {children}
+              {children}
+            <Footer />
+            </main>
           </ClientThemeWrapper>
         </ThemeProvider>
-       
         </body>
     </html>
   )

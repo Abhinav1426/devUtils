@@ -28,7 +28,7 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                <div className='pr-10 '>
+                <div className='pr-10'>
                         <button className='btn btn-circle btn-outline' onClick={onClickChangeTheme}>
                             {icon}
                         </button>

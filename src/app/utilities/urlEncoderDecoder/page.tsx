@@ -46,7 +46,7 @@ const URLEncoderDecoder = () => {
   );
 
   return (
-    <main className='flex min-h-screen flex-col items-center p-20'>
+    <main className='flex flex-col items-center p-20'>
       <PageHeadding title="Base64 Encoder & Decoder" />
       <section className="container flex flex-col place-items-center">
         <div className="card rounded-box flex w-3/6 flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
