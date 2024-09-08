@@ -2,7 +2,10 @@
 import { constrainedMemory } from 'process';
 import { createContext, useEffect, useState } from 'react';
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({
+    theme: 'light',
+    changeTheme: (theme: string) => {}
+});
 
 export const ThemeProvider = ({ children }: any) => {
     const [theme, setTheme] = useState('light');
