@@ -44,4 +44,4 @@ Open http://localhost:3000 with your browser to see the result.
 
 ## Authors
 
-#### [@Abhinav](https://github.com/Abhinav1426)
+- [@Abhinav](https://github.com/Abhinav1426)
