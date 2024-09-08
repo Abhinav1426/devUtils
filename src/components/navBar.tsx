@@ -19,7 +19,7 @@ const NavBar = () => {
         setIcon(newTheme === "light" ? <IoSunnyOutline size={20}/> : <FaRegMoon size={20}/>);
     };
     return (
-        <div className='navbar bg-base-100 justify-between'>
+        <div className='navbar bg-base-100 justify-between pt-5'>
                 <div className='pl-10 '>
                     <Link href="/utilities">
                         <button className='btn btn-circle btn-outline'>
