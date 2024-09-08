@@ -1,58 +1,66 @@
 "use client";
-import React, { useState } from 'react';
-import TextArea from '@/components/textArea';
+import React, { useCallback, useState } from 'react';
+import { urlEncode, urlDecode } from '@/utils/urlUtils';
+import TabPanelText from '@/components/tabPanelText';
+import PageHeadding from '@/components/pageHeadding';
 
-const style = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    gap: '20px',
-  }
-};
+const URLEncoderDecoder = () => {
+  const [inputEncode, setInputEncode] = useState('');
+  const [outputEncode, setOutputEncode] = useState('');
+  const [inputDecode, setInputDecode] = useState('');
+  const [outputDecode, setOutputDecode] = useState('');
+  const [activeTab, setActiveTab] = useState('Encode');
 
-const Base64EncoderDecoder = () => {
-  const [input, setInput] = useState('');
-  const [output, setOutput] = useState('');
-
-  const encode = () => {
-    const encoded = encodeURI(input).replace(/%5B/g, "[")
-      .replace(/%5D/g, "]")
-      .replace(
-        /[!'()*]/g,
-        (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
-      );
-    setOutput(encoded);
+  const handleTabChange = (str: string) => {
+    setActiveTab(str);
+    if (activeTab === "Encode") {
+      setInputEncode("");
+      setOutputEncode("");
+    }
+    if (activeTab === "Decode") {
+      setInputDecode("");
+      setOutputDecode("");
+    }
   };
 
-  const decode = () => {
-    const decoded = decodeURI(output);
-    setInput(decoded);
-  };
-
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      activeTab === 'Encode' ? setInputEncode(e.target.value) : setInputDecode(e.target.value);
+      if (activeTab === "Encode") {
+        setInputEncode(e.currentTarget.value)
+        try {
+          setOutputEncode(urlEncode(e.currentTarget.value));
+        } catch (e) {
+          setOutputEncode("Failed to encode to Base64");
+        }
+      }
+      if (activeTab === "Decode") {
+        setInputDecode(e.currentTarget.value);
+        try {
+          setOutputDecode(urlDecode(e.currentTarget.value));
+        } catch (e) {
+          setOutputDecode("Failed to decode from Base64");
+        }
+      }
+    },
+    [activeTab]
+  );
 
   return (
-    <main className='flex min-h-screen flex-col items-center p-24'>
-
-      <div className='items-center'>
-        <h1 className='text-3xl font-bold text-center p-4'>URL Encoder and Decoder</h1>
-      </div>
-      <div className="flex w-2/6 flex-col">
-        <div className="card bg-base-300 rounded-box grid  h-100 place-items-center">
-          <TextArea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Input" />
+    <main className='flex min-h-screen flex-col items-center p-20'>
+      <PageHeadding title="URL Encoder and Decoder" />
+      <section className="container flex flex-col place-items-center">
+        <div className="card rounded-box flex w-2/6 flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
+          <div role="tablist" className="tabs tabs-lifted">
+            <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Encode" onClick={() => handleTabChange("Encode")} defaultChecked />
+            <TabPanelText input={inputEncode} output={outputEncode} handleInputChange={handleInputChange} />
+            <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Decode" onClick={() => handleTabChange("Decode")} />
+            <TabPanelText input={inputDecode} output={outputDecode} handleInputChange={handleInputChange} />
+          </div>
         </div>
-        <div className="divider"></div>
-        <div className="card bg-base-300 rounded-box grid h-100 place-items-center">
-          <TextArea value={output} onChange={(e) => setOutput(e.target.value)} placeholder="Output" />
-        </div>
-      </div>
-      <div className='card'>
-      </div>
-
+      </section>
     </main>
   );
 };
 
-export default Base64EncoderDecoder;
+export default URLEncoderDecoder;

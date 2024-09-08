@@ -1,16 +1,24 @@
-
-const style = {
-    textarea: {
-      width: '600px',
-      height: '100px',
-    },
-  };
+import { cn } from "@/utils/cnMerger";
+import React from "react";
 
 
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <textarea
+        className={cn(
+          "flex  h-full w-full rounded-lg border border-input bg-muted px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+Textarea.displayName = "Textarea";
 
-const TextArea = (props: { value: string; onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void; placeholder?: string; }) => {
-    return <textarea  className="textarea textarea-bordered h-100 place-items-center"  value={props.value} onChange={props.onChange} placeholder={props.placeholder} />; 
-  };
-
-export default TextArea;
+export default Textarea;
