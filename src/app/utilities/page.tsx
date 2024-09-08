@@ -5,7 +5,7 @@ const cardData = [
 
   {
     title: 'String Case Converter',
-    description: 'Easily convert your strings to uppercase, lowercase, or title case with our online utility.',
+    description: 'Easily convert your strings to uppercase, lowercase, constant case,etc with our online utility.',
     route: '/utilities/stringCaseConverter'
   },
   {
