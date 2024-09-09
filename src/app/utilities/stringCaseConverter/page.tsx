@@ -47,7 +47,7 @@ const StringCaseConverter = () => {
         <main className='flex flex-col items-center p-20'>
             <PageHeadding title="String Case Converter" />
             <section className="container flex flex-col place-items-center">
-                <div className="card rounded-box flex w-2/3  flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
+                <div className="card rounded-box flex w-auto  flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
                     <TabList tabs={tabs} handleTabChange={handleTabChange} input = {input} output = {output} handleChangeInput = {handleChangeInput}/>
                 </div>
             </section>
