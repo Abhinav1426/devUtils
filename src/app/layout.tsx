@@ -26,7 +26,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ClientThemeWrapper>
           <main className='flex min-h-screen flex-col'>
-            <NavBar /> 
+            <NavBar />
               {children}
             <Footer />
             </main>
