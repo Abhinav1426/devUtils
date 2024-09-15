@@ -69,7 +69,7 @@ const Utilizes = () => {
     <main className='flex flex-col sm:px-4 sm:pt-4 md:px-24 md:pt-24 lg:px-24 lg:pt-24 items-center'>
         <h1 className='text-5xl font-bold text-center p-4'>devUtils</h1>
         <p className='text-center text-2xl sm:p-1 sm:text-xl'>A collection of utilities for developers</p>
-      <div className='sm:py-6 md:pt-16 lg:w-3/4 lg:p-28 '>
+      <div className='sm:py-6 md:pt-16 lg:w-auto lg:p-24'>
         <DisplayCards/>
       </div>
     </main>

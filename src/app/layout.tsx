@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0 "></meta>
       <body className={inter.className}>
-        <div className='w-full'>
+        <div className='w-auto'>
         <ThemeProvider>
           <ClientThemeWrapper>
           <main className='flex min-h-screen flex-col'>
