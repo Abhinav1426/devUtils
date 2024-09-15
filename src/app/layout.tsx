@@ -20,8 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0 "></meta>
       <body className={inter.className}>
+        <div className='w-full'>
         <ThemeProvider>
           <ClientThemeWrapper>
           <main className='flex min-h-screen flex-col'>
@@ -31,6 +32,7 @@ export default function RootLayout({
             </main>
           </ClientThemeWrapper>
         </ThemeProvider>
+        </div>
         </body>
     </html>
   )

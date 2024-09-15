@@ -46,12 +46,14 @@ const URLEncoderDecoder = () => {
   );
 
   return (
-    <main className='flex flex-col items-center p-20'>
+    <main className='flex flex-col items-center p-20 sm:px-1 sm:py-4'>
       <PageHeadding title="URL Encoder and Decoder" />
-      <section className="container flex flex-col place-items-center">
-        <div className="card rounded-box flex w-3/6 flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
+      <section className="lg:w-3/4 w-4/5">
+      <div className='flex flex-col items-center'>
+        <div className="card rounded-box border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
           <TabList tabs={tabs} handleTabChange={handleTabChange} input = {input} output = {output} handleChangeInput = {handleInputChange}/>
         </div>
+      </div>
       </section>
     </main>
   );
