@@ -5,6 +5,7 @@ import formatStringOutput from '@/utils/stringUtils';
 import TabList from '@/components/tabPanel';
 import TabPanelText from '@/components/tabPanelText';
 import TextArea from '@/components/textArea';
+import CopyButton from '@/components/copyButton';
 
 const StringCaseConverter = () => {
     const [input, setInput] = useState('');
@@ -62,6 +63,7 @@ const StringCaseConverter = () => {
                         <div className='flex flex-col items-center'>
                             <div className="card rounded-box flex w-auto  flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
                                 <TabList tabs={tabs} handleTabChange={handleTabChange} input={input} output={output} handleChangeInput={handleChangeInput} />
+                                <CopyButton text={output} />
                             </div>
                         </div>
                     ) : (
@@ -86,6 +88,7 @@ const StringCaseConverter = () => {
                                     </label>
                                     <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={output} placeholder="Output" readOnly />
                                 </>
+                                <CopyButton text={output} />
                             </div>
                         </div>
                     )}

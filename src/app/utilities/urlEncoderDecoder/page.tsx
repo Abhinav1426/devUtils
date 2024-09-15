@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { urlEncode, urlDecode } from '@/utils/urlUtils';
 import PageHeadding from '@/components/pageHeadding';
 import TabList from '@/components/tabPanel';
+import CopyButton from '@/components/copyButton';
 
 const URLEncoderDecoder = () => {
 
@@ -52,6 +53,7 @@ const URLEncoderDecoder = () => {
       <div className='flex flex-col items-center'>
         <div className="card rounded-box border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
           <TabList tabs={tabs} handleTabChange={handleTabChange} input = {input} output = {output} handleChangeInput = {handleInputChange}/>
+          <CopyButton text={output} />
         </div>
       </div>
       </section>

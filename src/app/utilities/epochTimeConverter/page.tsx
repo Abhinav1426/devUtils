@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 import PageHeadding from '@/components/pageHeadding';
 import TextArea from "@/components/textArea";
 import { formatOutput } from '@/utils/timestamp-to-date.utils';
+import CopyButton from '@/components/copyButton';
 
 const EpochTimeConverter = () => {
     const [input, setInput] = useState('');
@@ -29,6 +30,7 @@ const EpochTimeConverter = () => {
 
 
     return (
+      // TODO: Change the UI and add more features to the page
       <main className='flex flex-col items-center p-20 sm:px-1 sm:py-4'>
             <PageHeadding title="Epoch Time Converter" />
             <section className="lg:w-3/4 w-4/5">
@@ -43,6 +45,7 @@ const EpochTimeConverter = () => {
                         <span className="label-text font-medium">Date</span>
                     </label>
                     <TextArea className="card rounded-box grid h-32 place-items-center hover:shadow-2xl sm:h-40" value={output} placeholder="Output" readOnly/>
+                    <CopyButton text={output} />
                 </div>
             </div>
             </section>
