@@ -8,12 +8,12 @@ const cardData = [
     description: 'Easily convert your strings to uppercase, lowercase, constant case,etc with our online utility.',
     route: '/utilities/stringCaseConverter'
   },
-  {
-    title: 'Base Number Converter',
-    description: 'Easily convert your numbers between binary, octal, decimal, and hexadecimal with our online utility.',
-    route: '/utilities/baseNumberConverter'
-  }
-  ,
+  // TODO: Base Number Converter is not implemented yet
+  // {
+  //   title: 'Base Number Converter',
+  //   description: 'Easily convert your numbers between binary, octal, decimal, and hexadecimal with our online utility.',
+  //   route: '/utilities/baseNumberConverter'
+  // },
   {
     title: 'Epoch Time Converter',
     description: 'Easily convert your epoch time to human-readable time and vice versa with our online utility.',
@@ -35,7 +35,8 @@ const cardData = [
 function Card(props: any) {
   return (
 
-    <div className="card bg-base-100 w-96 border hover:shadow-2xl sm:shadow-lg">
+    <div className="card bg-base-100 sm:w-full md:w-96 lg:w-96 lg:h-56 border hover:shadow-2xl sm:shadow-lg"> 
+    {/* TODO: height of the card shoube set and md and lg width should check*/}
       <div className="card-body">
         <h2 className="card-title">{props.obj.title}</h2>
         <p>{props.obj.description}</p>
@@ -67,6 +68,7 @@ function DisplayCards() {
 const Utilizes = () => {
   return (
     <main className='flex flex-col sm:px-4 sm:pt-4 md:px-24 md:pt-24 lg:px-24 lg:pt-24 items-center'>
+      {/* TODO: add a new screen size : 1200px range to 1500 for the 2 col grid*/}
         <h1 className='text-5xl font-bold text-center p-4'>devUtils</h1>
         <p className='text-center text-2xl sm:p-1 sm:text-xl'>A collection of utilities for developers</p>
       <div className='sm:py-6 md:pt-16 lg:w-auto lg:p-24'>

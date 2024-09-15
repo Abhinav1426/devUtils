@@ -35,6 +35,7 @@ const NavBar = () => {
                     <Link href="/utilities">
                     <div className="group">
                         <button className='btn btn-circle btn-outline '>
+                            {/* TODO : no icon on home page */}
                                 <IoIosArrowBack className="lg:group-hover:hidden"/>
                                 {
                                     isDesktop ?  <IoHomeOutline  className="lg:hidden lg:group-hover:flex"/>: null

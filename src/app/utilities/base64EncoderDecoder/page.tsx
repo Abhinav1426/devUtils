@@ -4,6 +4,7 @@ import { base64Encode, base64Decode } from '@/utils/base64Utils';
 import TabPanelText from '@/components/tabPanelText';
 import PageHeadding from '@/components/pageHeadding';
 import TabList from '@/components/tabPanel';
+import CopyButton from '@/components/copyButton';
 
 const Base64EncoderDecoder = () => {
   const [input, setInput] = useState('');
@@ -50,6 +51,7 @@ const Base64EncoderDecoder = () => {
       <div className='flex flex-col items-center'>
         <div className="card rounded-box  border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
           <TabList tabs={tabs} handleTabChange={handleTabChange} input = {input} output = {output} handleChangeInput = {handleInputChange}/>
+          <CopyButton text={output} />
         </div>
       </div>
       </section>
