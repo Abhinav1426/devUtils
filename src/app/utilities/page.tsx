@@ -35,7 +35,7 @@ const cardData = [
 function Card(props: any) {
   return (
 
-    <div className="card bg-base-100 w-96 border hover:shadow-2xl ">
+    <div className="card bg-base-100 w-96 border hover:shadow-2xl sm:shadow-lg">
       <div className="card-body">
         <h2 className="card-title">{props.obj.title}</h2>
         <p>{props.obj.description}</p>
@@ -50,25 +50,26 @@ function Card(props: any) {
 }
 function DisplayCards() {
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div >
+      <div className="grid sm:grid-cols-1 sm:gap-2 md:grid-cols-2  md:gap-5 lg:grid-cols-3 lg:gap-10">
       {cardData.map((card) => (
         // eslint-disable-next-line react/jsx-key
-        <Link href={card.route}>
+        <Link className='w-fit' href={card.route}>
           <Card obj={card}/>
         </Link>
       ))}
     </div>
+    </div>
+
   )
 }
 
 const Utilizes = () => {
   return (
-    <main className='flex  flex-col items-center px-24 pt-24'>
-      <div className='items-center'>
+    <main className='flex flex-col sm:px-4 sm:pt-4 md:px-24 md:pt-24 lg:px-24 lg:pt-24 items-center'>
         <h1 className='text-5xl font-bold text-center p-4'>devUtils</h1>
-        <p className='text-2xl '>A collection of utilities for developers</p>
-      </div>
-      <div className='pt-36 '>
+        <p className='text-center text-2xl sm:p-1 sm:text-xl'>A collection of utilities for developers</p>
+      <div className='sm:py-6 md:pt-16 lg:w-3/4 lg:p-28 '>
         <DisplayCards/>
       </div>
     </main>

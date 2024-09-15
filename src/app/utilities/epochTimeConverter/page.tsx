@@ -29,10 +29,11 @@ const EpochTimeConverter = () => {
 
 
     return (
-        <main className='flex  flex-col items-center p-20'>
+      <main className='flex flex-col items-center p-20 sm:px-1 sm:py-4'>
             <PageHeadding title="Epoch Time Converter" />
-            <section className="container flex flex-col place-items-center">
-                <div className="card rounded-box flex w-3/6 flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
+            <section className="lg:w-3/4 w-4/5">
+            <div className='flex flex-col items-center'>
+              <div className="card rounded-box border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
                     <label className="label">
                         <span className="label-text font-medium">Epoch Timestamp (milliseconds or seconds) </span>
                     </label>
@@ -41,8 +42,9 @@ const EpochTimeConverter = () => {
                     <label className="label">
                         <span className="label-text font-medium">Date</span>
                     </label>
-                    <TextArea className="card rounded-box grid h-32 place-items-center hover:shadow-2xl" value={output} placeholder="Output" readOnly/>
+                    <TextArea className="card rounded-box grid h-32 place-items-center hover:shadow-2xl sm:h-40" value={output} placeholder="Output" readOnly/>
                 </div>
+            </div>
             </section>
         </main>
     );

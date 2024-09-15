@@ -34,7 +34,7 @@ const Tab = ({ label, defaultChecked, handleTabChange, input, output, handleChan
 
 
 const TabList = ({ handleTabChange, input, output, handleChangeInput ,tabs }: { handleTabChange: (label: string) => void, input: string, output: string, handleChangeInput: (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void, tabs: { label: string, defaultChecked?: boolean }[] }) => (
-    <div role="tablist" className="tabs tabs-lifted">
+    <div role="tablist" className="tabs tabs-lifted bg-base-200 rounded-box">
         {tabs.map((tabs, index) => (
       <Tab
         key={index}

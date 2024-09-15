@@ -11,16 +11,17 @@ const NavBar = () => {
     // eslint-disable-next-line
     const { changeTheme } = useContext(ThemeContext) as { changeTheme: (theme: string) => void };
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-    const [icon, setIcon] = useState(<IoSunnyOutline size={20}/>);
+    const [icon, setIcon] = useState(<IoSunnyOutline size={20} />);
     const onClickChangeTheme = () => {
         const newTheme = theme === "light" ? "black" : "light";
         setTheme(newTheme);
         changeTheme(newTheme);
-        setIcon(newTheme === "light" ? <IoSunnyOutline size={20}/> : <FaRegMoon size={20}/>);
+        setIcon(newTheme === "light" ? <IoSunnyOutline size={20} /> : <FaRegMoon size={20} />);
     };
     return (
-        <div className='navbar bg-base-100 justify-between pt-5'>
-                <div className='pl-10 '>
+        <section>
+            <div className='navbar bg-base-100 justify-between pt-5'>
+                <div className='lg:pl-10 pl-4'>
                     <Link href="/utilities">
                         <button className='btn btn-circle btn-outline'>
                             <IoIosArrowBack />
@@ -28,12 +29,14 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                <div className='pr-10'>
-                        <button className='btn btn-circle btn-outline' onClick={onClickChangeTheme}>
-                            {icon}
-                        </button>
+                <div className='lg:pr-10 pr-4'>
+                    <button className='btn btn-circle btn-outline' onClick={onClickChangeTheme}>
+                        {icon}
+                    </button>
                 </div>
-        </div>
+            </div>
+        </section>
+
     )
 }
 
