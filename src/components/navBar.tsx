@@ -8,9 +8,11 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { IoHomeOutline, IoSunnyOutline } from 'react-icons/io5';
 
 const NavBar = () => {
+    const light= "light";
+    const dark= "black";
     // eslint-disable-next-line
     const { changeTheme } = useContext(ThemeContext) as { changeTheme: (theme: string) => void };
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || light);
     const [icon, setIcon] = useState(<IoSunnyOutline size={20} />);
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1440);
 
@@ -23,10 +25,10 @@ const NavBar = () => {
     });
 
     const onClickChangeTheme = () => {
-        const newTheme = theme === "light" ? "black" : "light";
+        const newTheme = theme === light ? dark : light;
         setTheme(newTheme);
         changeTheme(newTheme);
-        setIcon(newTheme === "light" ? <IoSunnyOutline size={20} /> : <FaRegMoon size={20} />);
+        setIcon(newTheme === light ? <IoSunnyOutline size={20} /> : <FaRegMoon size={20} />);
     };
     return (
         <section>

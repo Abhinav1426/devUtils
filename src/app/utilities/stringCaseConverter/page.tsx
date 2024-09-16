@@ -6,6 +6,7 @@ import TabList from '@/components/tabPanel';
 import TabPanelText from '@/components/tabPanelText';
 import TextArea from '@/components/textArea';
 import CopyButton from '@/components/copyButton';
+import styles from '@/components/styles';
 
 const StringCaseConverter = () => {
     const [input, setInput] = useState('');
@@ -55,24 +56,24 @@ const StringCaseConverter = () => {
     }
 
     return (
-        <main className='flex flex-col items-center p-20 sm:px-1 sm:py-4'>
+        <main className={styles.mainClass}>
             <PageHeadding title="String Case Converter" />
             <section className="g:w-3/4 w-4/5">
                 <div>
                     {isDesktop ? (
-                        <div className='flex flex-col items-center'>
+                        <div className={styles.flexColCenter}>
                             <div className="card rounded-box flex w-auto  flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
                                 <TabList tabs={tabs} handleTabChange={handleTabChange} input={input} output={output} handleChangeInput={handleChangeInput} />
                                 <CopyButton text={output} />
                             </div>
                         </div>
                     ) : (
-                        <div className='flex flex-col items-center'>
+                        <div className={styles.flexColCenter}>
                             <div className="card rounded-box border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition w-full p-4">
                                 <label className="label">
                                         <span className="label-text font-medium">Select the case converter</span>
                                 </label>
-                                    <select className="select select-bordered w-full max-w-xs" value={activeTab} onChange={(e) => handleTabChange(e.target.value)}>
+                                    <select className="select select-bordered w-full" value={activeTab} onChange={(e) => handleTabChange(e.target.value)}>
                                         {tabs.map((tab, index) => (
                                             <option key={index} value={tab.label} selected={tab.label === activeTab}>{tab.label}</option>
                                         ))}
