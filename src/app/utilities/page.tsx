@@ -2,23 +2,6 @@ import Link from 'next/link';
 import React from 'react'
 
 const cardData = [
-
-  {
-    title: 'String Case Converter',
-    description: 'Easily convert your strings to uppercase, lowercase, constant case,etc with our online utility.',
-    route: '/utilities/stringCaseConverter'
-  },
-  // TODO: Base Number Converter is not implemented yet
-  // {
-  //   title: 'Base Number Converter',
-  //   description: 'Easily convert your numbers between binary, octal, decimal, and hexadecimal with our online utility.',
-  //   route: '/utilities/baseNumberConverter'
-  // },
-  {
-    title: 'Epoch Time Converter',
-    description: 'Easily convert your epoch time to human-readable time and vice versa with our online utility.',
-    route: '/utilities/epochTimeConverter'
-  },
   {
     title: 'Base64 Encoder and Decoder',
     description: 'Easily encode and decode Base64 data with our online utility.',
@@ -28,6 +11,21 @@ const cardData = [
     title: 'URL Encoder and Decoder',
     description: 'Easily encode and decode URL data with our online utility.',
     route: '/utilities/urlEncoderDecoder'
+  },
+  {
+    title: 'String Case Converter',
+    description: 'Easily convert your strings to uppercase, lowercase, constant case,etc with our online utility.',
+    route: '/utilities/stringCaseConverter'
+  },
+  {
+    title: 'Base Number Converter',
+    description: 'Easily convert your numbers between binary, octal, decimal, and hexadecimal with our online utility.',
+    route: '/utilities/baseNumberConverter'
+  },
+  {
+    title: 'Epoch Time Converter',
+    description: 'Easily convert your epoch time to human-readable time and vice versa with our online utility.',
+    route: '/utilities/epochTimeConverter'
   }
 ]
 
@@ -36,7 +34,9 @@ function Card(props: any) {
   return (
 
     <div className="card bg-base-100 sm:w-full md:w-96 lg:w-96 lg:h-56 border hover:shadow-2xl sm:shadow-lg"> 
-    {/* TODO: height of the card shoube set and md and lg width should check*/}
+    {/* TODO: height of the card should be set and md and lg width should check
+        TODO: use the localstorge to store the  input data for tools
+    */}
       <div className="card-body">
         <h2 className="card-title">{props.obj.title}</h2>
         <p>{props.obj.description}</p>
