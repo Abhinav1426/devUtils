@@ -56,7 +56,8 @@ const BaseNumberConverter = () => {
         if (isNaN(parsedNum)) {
           setOutput("Invalid number");
         }
-        setOutput (parsedNum.toString(toBase));
+        const outputStr = parsedNum.toString(toBase);
+        setOutput (outputStr === 'NaN' ? (input === '') ? "" : "Invalid number": outputStr);
       };
 
     const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
