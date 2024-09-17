@@ -42,7 +42,7 @@ export default function CopyButton({ text, className, classButtonName }: { text:
           className
         )}>
             <button className={cn(
-          "btn btn-outline lg:w-[15%] md:w-[25%] sm:w-[40%]",
+          "btn btn-outline w-28",
           classButtonName
         )}  onClick={handleCopy}>{buttonText}</button>
         </div>
