@@ -58,7 +58,7 @@ function Card(props: any) {
 function DisplayCards() {
   return (
     <div >
-      <div className="grid sm:grid-cols-1 sm:gap-2 md:grid-cols-2  md:gap-5 lg:grid-cols-3 lg:gap-10">
+      <div className="grid sm:grid-cols-1 sm:gap-2 md:grid-cols-2  md:gap-5 laptop:grid-cols-2  laptop:gap-5 grid-cols-3 gap-10">
       {cardData.map((card) => (
         // eslint-disable-next-line react/jsx-key
         <Link className='w-fit' href={card.route}>

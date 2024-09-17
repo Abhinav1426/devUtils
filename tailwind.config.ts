@@ -9,11 +9,13 @@ const config: Config = {
   theme: {
     screens: {
 
-      'sm': {'min': '320px', 'max': '767px'},
+      'sm': {'min': '200px', 'max': '767px'},
 
-      'md': {'min': '768px', 'max': '1200px'},
+      'md': {'min': '768px', 'max': '1300px'},
 
-      'lg': {'min': '1201px'},
+      'laptop': {'min': '1201px', 'max': '1572px'},
+
+      'lg': {'min': '1301px'},
     },
     extend: {
 
