@@ -42,8 +42,8 @@ const URLEncoderDecoder = () => {
               </div>
               <div className="divider lg:divider-horizontal sm:m-2 md:m-3"></div>
               <div className='flex lg:flex-col flex-row items-center justify-evenly '>
-                <button className="btn btn-outline sm:btn-sm" onClick={formate}>Formate</button>
-                <button className="btn btn-outline sm:btn-sm" onClick={minifier}>Minifier</button>
+                <button className="btn btn-outline sm:btn-sm" onClick={formate}>Format</button>
+                <button className="btn btn-outline sm:btn-sm" onClick={minifier}>Minifiy</button>
               </div>
               <div className="divider lg:divider-horizontal sm:m-2 md:m-3"></div>
               <div className="card  rounded-box grid  flex-grow place-items-center">
