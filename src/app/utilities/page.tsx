@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { title } from 'process';
 import React from 'react'
 
 const cardData = [
@@ -6,6 +7,11 @@ const cardData = [
     title: 'Base64 Encoder and Decoder',
     description: 'Easily encode and decode Base64 data with our online utility.',
     route: '/utilities/base64EncoderDecoder'
+  },
+  {
+    title: 'JSON Formatter',
+    description: 'Easily format and minify JSON data with our online utility.',
+    route: '/utilities/jsonFormatter'
   },
   {
     title: 'URL Encoder and Decoder',

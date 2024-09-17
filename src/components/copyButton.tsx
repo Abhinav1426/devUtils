@@ -1,3 +1,4 @@
+import { cn } from "@/utils/cnMerger";
 import { useCallback, useEffect, useState } from "react";
 import { TbCopy, TbCopyCheckFilled } from "react-icons/tb";
 
@@ -12,7 +13,7 @@ return(<>
 </>
 )};
 
-export default function CopyButton({ text }: { text: string }) {
+export default function CopyButton({ text, className, classButtonName }: { text: string; className?: string ; classButtonName?: string}): JSX.Element {
     const [initialText] = useState(copyButton);
     const [buttonText, setButtonText] = useState(initialText);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
@@ -35,8 +36,15 @@ export default function CopyButton({ text }: { text: string }) {
       }, [timeoutId]);
 
     return (
-        <div className="flex justify-start  pt-4">
-            <button className="btn btn-outline lg:w-[15%] md:w-[25%] sm:w-[40%]" onClick={handleCopy}>{buttonText}</button>
+        <div
+        className={cn(
+          "flex justify-start pt-4 ",
+          className
+        )}>
+            <button className={cn(
+          "btn btn-outline lg:w-[15%] md:w-[25%] sm:w-[40%]",
+          classButtonName
+        )}  onClick={handleCopy}>{buttonText}</button>
         </div>
     );
 }
