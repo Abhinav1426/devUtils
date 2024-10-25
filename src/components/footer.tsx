@@ -25,7 +25,7 @@ export default function Footer() {
                 <section className=" lg:pr-10 pr-4">
                     <div className="grid grid-flow-col gap-4">
                         <a target="_blank" href="https://www.linkedin.com/in/abhinav1426/" rel="noopener noreferrer"><FaLinkedin size={25} /></a>
-                        <a target="_blank" href="https://github.com/Abhinav1426" rel="noopener noreferrer"><FaGithub size={25} /></a>
+                        <a target="_blank" href="https://github.com/Abhinav1426/devUtils" rel="noopener noreferrer"><FaGithub size={25} /></a>
                         {/* <a target="_blank" href="https://bit.ly/mpabhinav_resume" rel="noopener noreferrer"><FaRegFilePdf size={25} /></a> */}
                     </div>
                 </section>
