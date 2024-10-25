@@ -8,12 +8,12 @@ export default function TabPanelText({ input, output,lableOne,lableTwo, handleIn
         <label className="label">
           <span className="label-text font-medium">{lableOne}</span>
         </label>
-        <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={input} onChange={handleInputChange} placeholder="Input" />
+        <TextArea className="card rounded-box grid h-40  hover:shadow-2xl text-left" value={input} onChange={handleInputChange} placeholder="Input" />
         <div className="divider"></div>
         <label className="label">
           <span className="label-text font-medium">{lableTwo}</span>
         </label>
-        <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={output} placeholder="Output" readOnly />
+        <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={output} placeholder="Output" readOnly />
       </div>
     </>
   );
