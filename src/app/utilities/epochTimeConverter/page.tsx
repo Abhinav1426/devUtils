@@ -40,12 +40,12 @@ const EpochTimeConverter = () => {
                     <label className="label">
                         <span className="label-text font-medium">Epoch Timestamp (milliseconds or seconds) </span>
                     </label>
-                    <TextArea className="card rounded-box grid h-10 place-items-center hover:shadow-2xl" value={input} onChange={(e) => handleChangeInput(e.target.value)} placeholder="Input" />
+                    <TextArea className="card rounded-box grid h-10  hover:shadow-2xl" value={input} onChange={(e) => handleChangeInput(e.target.value)} placeholder="Input" />
                     <div className="divider"></div>
                     <label className="label">
                         <span className="label-text font-medium">Date</span>
                     </label>
-                    <TextArea className="card rounded-box grid h-32 place-items-center hover:shadow-2xl sm:h-40" value={output} placeholder="Output" readOnly/>
+                    <TextArea className="card rounded-box grid h-32  hover:shadow-2xl sm:h-40" value={output} placeholder="Output" readOnly/>
                     <CopyButton text={output} />
                 </div>
             </div>

@@ -75,12 +75,12 @@ const BaseNumberConverter = () => {
                         <span className="label-text font-medium">From Base:</span>
                         </label>
                         <Selector activeSelector={fromNumber} handleSelectorChange={setFromNumber} />
-                        <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={input} onChange={handleChangeInput} placeholder="Input" />
+                        <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={input} onChange={handleChangeInput} placeholder="Input" />
                         <label className="label">
                         <span className="label-text font-medium">To Base:</span>
                         </label>
                         <Selector activeSelector={toNumber} handleSelectorChange={setToNumber} />
-                        <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={output} placeholder="Output" readOnly />
+                        <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={output} placeholder="Output" readOnly />
                         <CopyButton text={output} />
                     </div>
                 </div>

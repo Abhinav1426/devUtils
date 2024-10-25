@@ -82,12 +82,12 @@ const StringCaseConverter = () => {
                                     <label className="label pt-3">
                                         <span className="label-text font-medium">Text</span>
                                     </label>
-                                    <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={input} onChange={handleChangeInput} placeholder="Input" />
+                                    <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={input} onChange={handleChangeInput} placeholder="Input" />
                                     <div className="divider"></div>
                                     <label className="label">
                                         <span className="label-text font-medium">Output Text</span>
                                     </label>
-                                    <TextArea className="card rounded-box grid h-40 place-items-center hover:shadow-2xl" value={output} placeholder="Output" readOnly />
+                                    <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={output} placeholder="Output" readOnly />
                                 </>
                                 <CopyButton text={output} />
                             </div>

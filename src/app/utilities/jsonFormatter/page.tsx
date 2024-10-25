@@ -37,8 +37,8 @@ const URLEncoderDecoder = () => {
         <div className={styles.flexColCenter}>
           <div className="card rounded-box border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-100 lg:h-100 w-full p-4">
             <div className="flex w-full flex-col lg:flex-row ">
-              <div className="card  rounded-box grid flex-grow place-items-center">
-              <TextArea className="card rounded-box  grid place-items-center hover:shadow-2xl resize-none lg:h-[500px] md:h-72 sm:h-48" value={input} onChange={(e)=>{setInput(e.currentTarget.value)}} placeholder="Input"  />
+              <div className="card  rounded-box grid flex-grow ">
+              <TextArea className="card rounded-box  grid  hover:shadow-2xl resize-none lg:h-[500px] md:h-72 sm:h-48" value={input} onChange={(e)=>{setInput(e.currentTarget.value)}} placeholder="Input"  />
               </div>
               <div className="divider lg:divider-horizontal sm:m-2 md:m-3"></div>
               <div className='flex lg:flex-col flex-row items-center justify-evenly '>
@@ -46,8 +46,8 @@ const URLEncoderDecoder = () => {
                 <button className="btn btn-outline sm:btn-sm" onClick={minifier}>Minifiy</button>
               </div>
               <div className="divider lg:divider-horizontal sm:m-2 md:m-3"></div>
-              <div className="card  rounded-box grid  flex-grow place-items-center">
-              <TextArea className="card rounded-box grid  place-items-center hover:shadow-2xl resize-none lg:h-[500px] md:h-72 sm:h-48" value={output} placeholder="Output" readOnly />
+              <div className="card  rounded-box grid  flex-grow ">
+              <TextArea className="card rounded-box grid   hover:shadow-2xl resize-none lg:h-[500px] md:h-72 sm:h-48" value={output} placeholder="Output" readOnly />
               </div>
             </div>
             <CopyButton classButtonName="sm:btn-sm" text={output} />
