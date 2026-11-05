@@ -10,7 +10,6 @@ import { IoHomeOutline, IoSunnyOutline } from 'react-icons/io5';
 const NavBar = () => {
     const light= "light";
     const dark= "black";
-    // eslint-disable-next-line
     const { changeTheme } = useContext(ThemeContext) as { changeTheme: (theme: string) => void };
     const [theme, setTheme] = useState(localStorage.getItem("theme") || light);
     const [icon, setIcon] = useState(<IoSunnyOutline size={20} />);

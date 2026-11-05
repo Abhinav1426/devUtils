@@ -23,8 +23,6 @@ const StringCaseConverter = () => {
         { label: "CONSTANT_CASE" },
     ];
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => { convertString() }, [activeTab, input]);
     const updateMedia = () => {
         setIsDesktop(window.innerWidth > 1440);
     };
@@ -42,6 +40,8 @@ const StringCaseConverter = () => {
         }
         console.log(activeTab, input, output, "1");
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
+    useEffect(() => { convertString() }, [activeTab, input]);
 
     const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const value = event.target.value;
@@ -62,30 +62,30 @@ const StringCaseConverter = () => {
                 <div>
                     {isDesktop ? (
                         <div className={styles.flexColCenter}>
-                            <div className="card rounded-box flex w-auto  flex-col border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition p-6">
+                            <div className="card rounded-box flex w-auto  flex-col border bg-card text-card-foreground shadow-xs flex-1 hover:shadow-md transition p-6">
                                 <TabList tabs={tabs} handleTabChange={handleTabChange} input={input} output={output} handleChangeInput={handleChangeInput} />
                                 <CopyButton text={output} />
                             </div>
                         </div>
                     ) : (
                         <div className={styles.flexColCenter}>
-                            <div className="card rounded-box border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition w-full p-4">
-                                <label className="label">
-                                        <span className="label-text font-medium">Select the case converter</span>
+                            <div className="card rounded-box border bg-card text-card-foreground shadow-xs flex-1 hover:shadow-md transition w-full p-4">
+                                <label className="flex select-none items-center justify-between px-1 py-2">
+                                        <span className="text-sm font-medium">Select the case converter</span>
                                 </label>
-                                    <select className="select select-bordered w-full" value={activeTab} onChange={(e) => handleTabChange(e.target.value)}>
+                                    <select className="select w-full" value={activeTab} onChange={(e) => handleTabChange(e.target.value)}>
                                         {tabs.map((tab, index) => (
                                             <option key={index} value={tab.label} selected={tab.label === activeTab}>{tab.label}</option>
                                         ))}
                                     </select>
                                 <>
-                                    <label className="label pt-3">
-                                        <span className="label-text font-medium">Text</span>
+                                    <label className="flex select-none items-center justify-between px-1 py-2 pt-3">
+                                        <span className="text-sm font-medium">Text</span>
                                     </label>
                                     <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={input} onChange={handleChangeInput} placeholder="Input" />
                                     <div className="divider"></div>
-                                    <label className="label">
-                                        <span className="label-text font-medium">Output Text</span>
+                                    <label className="flex select-none items-center justify-between px-1 py-2">
+                                        <span className="text-sm font-medium">Output Text</span>
                                     </label>
                                     <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={output} placeholder="Output" readOnly />
                                 </>

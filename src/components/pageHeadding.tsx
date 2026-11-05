@@ -1,4 +1,5 @@
-export default function PageHeadding({ title }: { title: string }): JSX.Element {
+import type React from "react";
+export default function PageHeadding({ title }: { title: string }): React.JSX.Element {
     return (
         <>
             <section className="container max-w-2xl mb-10 sm:mb-5">

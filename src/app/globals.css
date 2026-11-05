@@ -1,3 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, dark, black, dracula;
+}
+
+/* Custom range breakpoints (migrated from tailwind.config.ts) */
+@theme {
+  --breakpoint-*: initial;
+}
+@custom-variant sm (@media (min-width: 200px) and (max-width: 767px));
+@custom-variant md (@media (min-width: 768px) and (max-width: 1300px));
+@custom-variant laptop (@media (min-width: 1201px) and (max-width: 1572px));
+@custom-variant lg (@media (min-width: 1301px));
+
+/* Tailwind v4 changed the default border color to currentColor; keep v3 look */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}

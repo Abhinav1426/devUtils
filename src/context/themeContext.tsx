@@ -12,6 +12,8 @@ export const ThemeProvider = ({ children }: any) => {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        // Hydration guard: theme comes from localStorage, which is only available on the client.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMounted(true);
         const storedTheme = localStorage.getItem("theme") || "light";
         setTheme(storedTheme);

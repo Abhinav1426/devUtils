@@ -28,7 +28,7 @@ const tabs = [
 function Selector(props: any) {
     return (
       <div className='pb-2'>
-            <select className="select select-bordered w-full" value={props.activeSelector} onChange={(e) => props.handleSelectorChange(e.target.value)}>
+            <select className="select w-full" value={props.activeSelector} onChange={(e) => props.handleSelectorChange(e.target.value)}>
             {tabs.map((tab, index) => (
                 <option key={index} value={tab.label} selected={tab.label === props.activeSelector}>{tab.label}</option>
             ))}
@@ -43,8 +43,6 @@ const BaseNumberConverter = () => {
     const [fromNumber, setFromNumber] = useState('Decimal (10)');
     const [toNumber, setToNumber] = useState('Binary (2)');
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => { baseNumberConvet() }, [fromNumber,toNumber, input]);
 
     const baseNumberConvet = () => {
         const fromBase = tabs.filter((tab) => tab.label === fromNumber)[0].value;
@@ -59,6 +57,8 @@ const BaseNumberConverter = () => {
         const outputStr = parsedNum.toString(toBase);
         setOutput (outputStr === 'NaN' ? (input === '') ? "" : "Invalid number": outputStr);
       };
+    // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
+    useEffect(() => { baseNumberConvet() }, [fromNumber,toNumber, input]);
 
     const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setInput(event.target.value);
@@ -70,14 +70,14 @@ const BaseNumberConverter = () => {
             <PageHeadding title="Base Number Converter" />
             <section className="lg:w-3/4 w-4/5">
                 <div className={styles.flexColCenter}>
-                    <div className="card rounded-box  border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
-                        <label className="label">
-                        <span className="label-text font-medium">From Base:</span>
+                    <div className="card rounded-box  border bg-card text-card-foreground shadow-xs flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
+                        <label className="flex select-none items-center justify-between px-1 py-2">
+                        <span className="text-sm font-medium">From Base:</span>
                         </label>
                         <Selector activeSelector={fromNumber} handleSelectorChange={setFromNumber} />
                         <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={input} onChange={handleChangeInput} placeholder="Input" />
-                        <label className="label">
-                        <span className="label-text font-medium">To Base:</span>
+                        <label className="flex select-none items-center justify-between px-1 py-2">
+                        <span className="text-sm font-medium">To Base:</span>
                         </label>
                         <Selector activeSelector={toNumber} handleSelectorChange={setToNumber} />
                         <TextArea className="card rounded-box grid h-40  hover:shadow-2xl" value={output} placeholder="Output" readOnly />
