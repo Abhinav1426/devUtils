@@ -1,3 +1,4 @@
+import type React from "react";
 import { cn } from "@/utils/cnMerger";
 import { useCallback, useEffect, useState } from "react";
 import { TbCopy, TbCopyCheckFilled } from "react-icons/tb";
@@ -13,7 +14,7 @@ return(<>
 </>
 )};
 
-export default function CopyButton({ text, className, classButtonName }: { text: string; className?: string ; classButtonName?: string}): JSX.Element {
+export default function CopyButton({ text, className, classButtonName }: { text: string; className?: string ; classButtonName?: string}): React.JSX.Element {
     const [initialText] = useState(copyButton);
     const [buttonText, setButtonText] = useState(initialText);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);

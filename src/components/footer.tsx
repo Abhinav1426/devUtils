@@ -17,7 +17,7 @@ export default function Footer() {
                                 Designed and developed in
                             </p>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img className="ml-1 w-8 rounded-sm" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/512px-Flag_of_India.svg.png" alt={"Indian flag"} />
+                            <img className="ml-1 w-8 rounded-xs" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/512px-Flag_of_India.svg.png" alt={"Indian flag"} />
                         </div>
                     </div>
 

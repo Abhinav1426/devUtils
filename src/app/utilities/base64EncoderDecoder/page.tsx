@@ -50,7 +50,7 @@ const Base64EncoderDecoder = () => {
       <PageHeadding title="Base64 Encoder & Decoder" />
       <section className="lg:w-3/4 w-4/5">
       <div className={styles.flexColCenter}>
-        <div className="card rounded-box  border bg-card text-card-foreground shadow-sm flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
+        <div className="card rounded-box  border bg-card text-card-foreground shadow-xs flex-1 hover:shadow-md transition lg:p-6 lg:w-3/6 w-full p-4">
           <TabList tabs={tabs} handleTabChange={handleTabChange} input = {input} output = {output} handleChangeInput = {handleInputChange}/>
           <CopyButton text={output} />
         </div>
