@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "eslint ."
   },
+  "engines": {
+    "node": "26.x"
+  },
   "dependencies": {
     "@tailwindcss/postcss": "4.3.4",
     "@types/node": "26.6.6",

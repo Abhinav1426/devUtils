@@ -103,3 +103,9 @@ The previous upgrade moved Tailwind 3 → 4 without migrating the config, so sty
 
 - npm peer-dependency warnings: `eslint-plugin-import`, `eslint-plugin-jsx-a11y` and `eslint-plugin-react` (bundled by `eslint-config-next`) don't yet declare ESLint 10 support. Lint runs fine; these will clear when those plugins release updates.
 - No in-browser visual check was done — worth a quick click-through of each utility page and the theme toggle.
+
+## 8. Follow-up: Vercel Node.js runtime (Node 20 discontinued)
+
+- **Issue:** Vercel build failed — `Node.js Version "20.x" is discontinued and must be upgraded. Please set Node.js Version to 26.x`.
+- **Fix:** Added `"engines": { "node": "26.x" }` to `package.json`. Vercel uses `engines.node` over the Project Settings value, so the version is now pinned in code.
+- **Verified on Node 26.13.0:** `npm ci` (0 vulnerabilities), `eslint .` clean, `npm run build` succeeds with all routes prerendered.
